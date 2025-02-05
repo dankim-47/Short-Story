@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of the City</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  </head>
+<body>
+    <style>
+    h1{
+            body {
+                font-family: 'Roboto', sans-serif; /* Modern font */
+                margin: 0;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f8f8f8; /* Light background */
+            }
+            
+            header {
+                background-color: #fff;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            
+            nav ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            nav li {
+                display: inline;
+                margin: 0 15px;
+            }
+            
+            nav a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                transition: color 0.3s ease; /* Smooth color transition */
+            }
+            
+            nav a:hover {
+                color: #007bff; /* Highlight on hover */
+            }
+            
+            main {
+                padding: 40px;
+                max-width: 900px;
+                margin: 0 auto; /* Center the content */
+            }
+            
+            .story {
+                margin-bottom: 40px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .story h2 {
+                margin-bottom: 10px;
+                color: #007bff; /* Blue headings */
+            }
+            
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 20px;
+                position: relative; /* Not fixed anymore */
+                bottom: 0;
+                width: 100%;
+            }
+            
+            
+            /* Responsive Design (Example) */
+            @media (max-width: 768px) {
+                nav li {
+                    display: block;
+                    margin: 10px 0;
+                }
+            
+                main {
+                    padding: 20px;
+                }
+            } 
+    }
+</style>
+    <header>
+        <h1>Echoes of the City</h1>
+        <nav>
+            <ul>
+                <li><a href="#story1">The Commute</a></li>
+                <li><a href="#story2">The App</a></li>
+                <li><a href="#story3">The Artist</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="story1" class="story">
+            <h2>The Commute</h2>
+            <p>Amina's shoulders slumped with the rhythm of the matatu's erratic stops and starts.  Nairobi's morning crush pressed in, a sea of faces glued to phones or lost in thought.  She felt invisible, another cog in the city's relentless machine.  Suddenly, a crumpled newspaper brushed her arm.  She glanced up to see an old man with kind eyes offering a small smile.  "Beautiful sunrise, isn't it?" he murmured, gesturing towards the vibrant streaks of orange and pink painting the sky.  For a fleeting moment, Amina felt seen, a shared experience in the urban chaos.  The isolation receded, replaced by a quiet connection.  (Continue the story...)</p>
+        </section>
+
+        <section id="story2" class="story">
+            <h2>The App</h2>
+            <p>David's world existed within the glowing rectangle of his phone.  He curated a perfect online persona, a tapestry of witty tweets and filtered selfies. Yet, the constant notifications and endless scrolling only amplified the hollowness within.  One sweltering afternoon, a power outage plunged his apartment building into darkness.  Forced to emerge from his digital cocoon, he discovered his neighbors weren't the strangers he'd assumed.  Laughter echoed through the stairwell as they shared stories and candles.  The app remained dark, but David felt a spark of genuine connection he hadn't felt in years. (Continue the story...)</p>
+        </section>
+
+        <section id="story3" class="story">
+            <h2>The Artist</h2>
+            <p>Wanjiru's canvases remained stubbornly blank. The city's relentless energy, once a source of inspiration, now felt like a cacophony drowning her creativity.  One evening, she stumbled upon a young man playing a soulful melody on a battered guitar in a dimly lit alleyway.  The music, raw and honest, resonated with the city's hidden heart.  Wanjiru's fingers began to itch.  The city's noise transformed into a symphony, its grit into a palette of vibrant colors.  In the musician's melody, she found her muse again. (Continue the story...)</p>
+        </section>
+
+        <section id="about">
+            <h2>About the Project</h2>
+            <p>"Echoes of the City" is a collection of interconnected short stories exploring the theme of urban isolation in modern Nairobi.  Each story offers a glimpse into the lives of individuals navigating the complexities of city life, their struggles, and their fleeting moments of human connection. This project was developed using HTML, CSS, and JavaScript to create an engaging and accessible reading experience.  The design emphasizes readability and a modern aesthetic to complement the stories' themes.  (Add more details about your project, inspiration, and process here.)</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OLIVER ORKINS</p>
+    </footer>
+
+    <script>
+        // script.js
+
+// Smooth scrolling for navigation links (Modernized with optional chaining and arrow functions)
+document.querySelectorAll('nav a')?.forEach(anchor => {  // Optional chaining for safety
+    anchor.addEventListener('click', (e) => { // Arrow function for conciseness
+        e.preventDefault();
+
+        const targetId = anchor.getAttribute('href')?.substring(1); // Optional chaining
+        if (!targetId) return; // Guard clause: Exit early if no target ID
+
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return; // Guard clause: Exit early if no target element
+
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+// Interactive Story Elements (Example: "Read More" button)
+document.querySelectorAll('.story .read-more')?.forEach(button => {
+    button.addEventListener('click', () => {
+        const storyContent = button.previousElementSibling; // Get the story content
+        storyContent.classList.toggle('expanded'); // Toggle the "expanded" class
+
+        if (button.textContent === "Read More") {
+            button.textContent = "Read Less";
+        } else {
+            button.textContent = "Read More";
+        }
+    });
+});
+
+
+// Local Storage Interaction (Example: Saving user name)
+const userNameInput = document.getElementById('userName'); // Get the user name input field
+const saveNameButton = document.getElementById('saveName'); // Get the save button
+
+if (saveNameButton) { // Check if the save button exists on the page
+    saveNameButton.addEventListener('click', () => {
+        const userName = userNameInput.value;
+        localStorage.setItem('userName', userName);
+
+        // Provide user feedback (e.g., change button text, show a message)
+        saveNameButton.textContent = "Saved!";
+        setTimeout(() => saveNameButton.textContent = "Save Name", 2000); // Reset button text
+    });
+}
+
+
+// Retrieving and displaying user name from local storage (Example)
+const greeting = document.getElementById('greeting'); // Element to display the greeting
+
+if (greeting) { // Check if the greeting element exists on the page
+    const storedName = localStorage.getItem('userName');
+    if (storedName) {
+        greeting.textContent = `Hello, ${storedName}!`;
+    }
+}
+
+
+
+// More advanced interactive elements (examples):
+
+// 1.  Story Sharing:  You could add buttons to share stories on social media using the
+//     browser's share API or by constructing share URLs.
+
+// 2.  Story Highlighting:  Allow users to highlight text in the stories and save their
+//     highlights to local storage.
+
+// 3.  Comments Section:  Integrate a commenting system (either a simple one you
+//     build yourself or a third-party service).
+
+// 4.  Theme Switching:  Let users choose between different color themes for the website.
+
+
+// Remember to add the necessary HTML elements (e.g., buttons, divs) and CSS styles
+// to support these interactive features.
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* style.css */
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* Light background */
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a:hover {
+    color: #007bff; /* Highlight on hover */
+}
+
+main {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto; /* Center the content */
+}
+
+.story {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.story h2 {
+    margin-bottom: 10px;
+    color: #007bff; /* Blue headings */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Not fixed anymore */
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Responsive Design (Example) */
+@media (max-width: 768px) {
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
